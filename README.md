@@ -10,7 +10,7 @@ Meu Planner de Tarefas é uma aplicação web interativa construída com React, 
 - **Arrastar e Soltar:** Reorganize a ordem das tarefas arrastando e soltando.
 - **Filtros:** Visualize todas as tarefas, apenas as ativas ou apenas as concluídas.
 - **Limpar Tarefas Concluídas:** Remova todas as tarefas marcadas como concluídas de uma vez.
-- **Personalização:** Escolha a cor do post-it e insira emojis para tornar a experiência mais divertida e personalizada.
+- **Personalização:** Escolha a cor do post-it.
 - **Persistência de Dados:** As tarefas são salvas no navegador, garantindo que não sejam perdidas após recarregar a página.
 
 
