@@ -1,0 +1,250 @@
+/* src/App.css */
+
+/* Importar a fonte Chewy */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f2f5;
+  font-family: 'Chewy', cursive;
+}
+
+.container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  max-width: 1400px;
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 3rem;
+  text-shadow: 2px 2px #f0f2f5;
+}
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.input-container input[type="text"],
+.input-container input[type="date"],
+.input-container input[type="time"],
+.input-container input[type="color"],
+.input-container .location-input {
+  padding: 10px 15px;
+  border: 2px solid #dddddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-container input[type="text"]:focus,
+.input-container input[type="date"]:focus,
+.input-container input[type="time"]:focus,
+.input-container input[type="color"]:focus,
+.input-container .location-input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.input-container .add-button {
+  padding: 10px 20px;
+  border: none;
+  background: #28a745;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.input-container .add-button:hover {
+  background: #218838;
+}
+
+.board {
+  background: url('./assets/images/panel-background.png') no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 600px;
+  width: 100%;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.tasks-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  background: var(--task-color, #fffbcc);
+  position: relative;
+  user-select: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.task-left {
+  display: flex;
+  align-items: flex-start;
+}
+
+.task-left input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-details span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333333;
+}
+
+.task-details span.completed {
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.task-location {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-top: 5px;
+}
+
+.task-datetime {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-top: 3px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  color: #c82333;
+}
+
+.task-count {
+  margin-top: 20px;
+  text-align: center;
+  color: #555555;
+  font-size: 1rem;
+}
+
+.clear-completed {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #dc3545;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+}
+
+.clear-completed:hover {
+  background: #c82333;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.filters button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: none;
+  background: #f0f0f0;
+  color: #333333;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1rem;
+}
+
+.filters button.active,
+.filters button:hover {
+  background: #007BFF;
+  color: #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .container {
+    padding: 15px 20px;
+  }
+
+  .input-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-container input[type="text"],
+  .input-container input[type="date"],
+  .input-container input[type="time"],
+  .input-container input[type="color"],
+  .input-container .location-input {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .input-container .add-button {
+    width: 100%;
+  }
+}
